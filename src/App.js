@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
+import BottomNavbar from './BottomNavbar';
+import {
+  Route,
+  useHistory,
+  BrowserRouter,
+  Switch,
+} from "react-router-dom";
+import Home from './Home';
+import Calendar from './Calendar';
+import Tasks from './Tasks';
 
 function App() {
+  let history = useHistory();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter history={history} >
+        <Switch>
+          
+          <Route path="/home" component={Home} />
+          <Route path="/calendar" component={Calendar} />
+          <Route path="/tasks" component={Tasks} />
+        </Switch>
+        <BottomNavbar value={"home"} />
+      </BrowserRouter>
     </div>
   );
 }

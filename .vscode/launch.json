@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "Projects:d:/Hacker/Projects/karmayoga-web/src/AppBar.ButtonAppBar (nodejs12.x)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "\\Hacker\\Projects\\karmayoga-web",
+                "lambdaHandler": "d:/Hacker/Projects/karmayoga-web/src/AppBar.ButtonAppBar"
+            },
+            "lambda": {
+                "runtime": "nodejs12.x",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        }
+    ]
+}
