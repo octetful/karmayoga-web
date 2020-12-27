@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Karmayoga Web",
+  "name": "Karmayoga Task Scheduler Web UI",
   "icons": [
     {
       "src": "favicon.ico",
