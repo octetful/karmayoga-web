@@ -1,4 +1,4 @@
-# Karmayoga Web
+# ![](public/favicon.ico) Karmayoga Web
 Karmayoga is a software for Task Organization with a focus on humans :family: (not machines). It is meant to be your personal online task organizer. 
 ![](src/logo.svg)
 
