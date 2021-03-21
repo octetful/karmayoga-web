@@ -1,0 +1,9 @@
+orbs:
+  yarn: itinerisltd/yarn@2.1.1
+version: 2.1
+
+workflows:
+  test:
+    jobs:
+      - yarn/test-if-changed:
+          paths: ./
