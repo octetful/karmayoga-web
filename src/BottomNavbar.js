@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
@@ -22,6 +22,10 @@ export default function BottomNavbar(props) {
     history.push(`/${newValue}`);
     setValue(newValue);
   };
+
+  useEffect(() => {
+    history.push(`/${value}`);
+  });
 
   return (
     <BottomNavigation
