@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from '../resources/logo.svg';
 import {withRouter} from 'react-router-dom';
 
 const Home = () => {
