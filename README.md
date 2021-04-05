@@ -3,7 +3,7 @@
 ![](https://img.shields.io/github/license/octetful/karmayoga-web?label=license)
 
 Karmayoga is a software for Task Organization with a focus on humans :family: (not machines). It is meant to be your personal online task organizer. 
-![](src/logo.svg)
+![](src/resources/logo.svg)
 
 This project contains the user interface to the task organization project listed below.
 Please refer to the [Karmayoga](https://github.com/octetful/karmayoga) repository for some context.
