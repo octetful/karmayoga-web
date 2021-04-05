@@ -1,15 +1,15 @@
 
 import './App.css';
-import BottomNavbar from './BottomNavbar';
+import BottomNavbar from './components/BottomNavbar';
 import {
   Route,
   useHistory,
   BrowserRouter,
   Switch,
 } from "react-router-dom";
-import Home from './Home';
-import Calendar from './Calendar';
-import Tasks from './Tasks';
+import Home from './pages/Home';
+import Calendar from './pages/Calendar';
+import Tasks from './pages/Tasks';
 
 function App() {
   let history = useHistory();
