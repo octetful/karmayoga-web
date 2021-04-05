@@ -18,7 +18,6 @@ function App() {
     <div className="App">
       <BrowserRouter history={history} >
         <Switch>
-          
           <Route path="/home" component={Home} />
           <Route path="/calendar" component={Calendar} />
           <Route path="/tasks" component={Tasks} />
