@@ -8,6 +8,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import TaskListItem from '../components/TaskListItem';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -61,9 +62,7 @@ export default function Tasks() {
             </form>
 
             <List className={classes.root}>
-                {
-                    createNewTaskEntry(labelId)
-                }
+                <TaskListItem labelId={labelId} />
             </List>
         </div>
         );
