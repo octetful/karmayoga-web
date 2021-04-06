@@ -3,9 +3,21 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
+import { makeStyles } from '@material-ui/core/styles';
 
-export default function TaskListItem(labelId) {
+const useStyles = makeStyles((theme) => ({
+    CompletedText: {
+        textDecoration: 'line-through',
+        fontStyle: 'italic',
+    },
+    IncompleteText: {
+        fontStyle: 'normal'
+    },
+}));
+
+export default function TaskListItem(props) {
     const [checked, setChecked] = useState(false);
+    const classes = useStyles();
 
     return (
         <ListItem key={1} 
@@ -18,9 +30,12 @@ export default function TaskListItem(labelId) {
                 <Checkbox edge="start"
                 checked={checked}
                 disableRipple
-                inputProps= {{'aria-labelledby': labelId}}/>   
+                inputProps= {{'aria-labelledby': props.labelId}}/>   
             </ListItemIcon>
-            <ListItemText id={labelId} primary={`You got work to do!`} />
+            <ListItemText id={props.labelId} 
+                    primary={props.primaryText}
+                    className={(checked)?classes.CompletedText:classes.IncompleteText} 
+            />
         </ListItem>
     );
 };

@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
@@ -22,26 +18,22 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const createNewTaskEntry = (labelId) => {
-    return <ListItem key={1} 
-                role={undefined}
-                dense
-                button
-                >
-        <ListItemIcon>
-            <Checkbox edge="start"
-            checked={false}
-            disableRipple
-            inputProps= {{'aria-labelledby': labelId}}/>   
-        </ListItemIcon>
-        <ListItemText id={labelId} primary={`You got work to do!`} />
-    </ListItem>
-};
 
 export default function Tasks() {
     const classes = useStyles();
     const labelId = `checkbox-list-label-1`;
     const [taskEntryText, setTaskEntryText] = useState('');
+    const createTaskEntry = (title) => {
+        return (<TaskListItem labelId={labelId} primaryText={title} />);
+    };
+
+    const [taskEntries, setTaskEntries] = useState([
+        createTaskEntry("You've got work to do")
+    ]);
+
+    const addTaskEntry = () => {
+        setTaskEntries([...taskEntries, createTaskEntry(taskEntryText)])
+    }
 
     return (
         <div className="App-header">
@@ -56,13 +48,14 @@ export default function Tasks() {
                         variant="contained"
                         className={classes.button}
                         startIcon={<AddIcon />}
+                        onClick={() => addTaskEntry()}
                 >
                     Add
                 </Button>
             </form>
 
             <List className={classes.root}>
-                <TaskListItem labelId={labelId} />
+                { taskEntries }
             </List>
         </div>
         );
