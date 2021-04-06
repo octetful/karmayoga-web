@@ -3,6 +3,7 @@ import { mount } from "enzyme";
 import Home from "../pages/Home";
 import Calendar from "../pages/Calendar";
 import Tasks from "../pages/Tasks";
+import TaskScheduler from "../pages/TaskScheduler";
 import { Route, Switch, MemoryRouter } from "react-router-dom";
 import App from '../App';
 import Enzyme from 'enzyme';
@@ -48,5 +49,18 @@ describe('App should load', () => {
 
     const tasksPage = wrapper.find(Tasks);
     expect(tasksPage.exists()).toBeTruthy();
+  });
+
+  test('loads scheduler page when routed', () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={["/scheduler"]} initialIndex={0}>
+        <Switch>
+          <Route path="/scheduler" render={() => <TaskScheduler />}/>
+        </Switch>
+      </MemoryRouter>
+    );
+
+    const schedulerPage = wrapper.find(TaskScheduler);
+    expect(schedulerPage.exists()).toBeTruthy();
   });
 });
