@@ -5,6 +5,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@material-ui/icons/Home';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import ScheduleIcon from '@material-ui/icons/Schedule';
 import { useHistory } from 'react-router';
 
 const useStyles = makeStyles({
@@ -37,6 +38,7 @@ export default function BottomNavbar(props) {
       <BottomNavigationAction label="Home" icon={<HomeIcon />} value="home" />
       <BottomNavigationAction label="Calendar" icon={<CalendarTodayIcon />} value="calendar" />
       <BottomNavigationAction label="Tasks" icon={<AssignmentTurnedInIcon />} value="tasks" />
+      <BottomNavigationAction label="Scheduler" icon={<ScheduleIcon />} value="scheduler" />
     </BottomNavigation>
   );
 };
